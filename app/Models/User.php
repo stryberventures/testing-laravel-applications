@@ -12,15 +12,25 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public const COLUMN_FIRSTNAME = 'firstname';
+    public const COLUMN_LASTNAME = 'lastname';
+    public const COLUMN_USERNAME = 'username';
+    public const COLUMN_EMAIL = 'email';
+    public const COLUMN_PASSWORD = 'password';
+    public const COLUMN_IMAGE = 'image';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        self::COLUMN_FIRSTNAME,
+        self::COLUMN_LASTNAME,
+        self::COLUMN_USERNAME,
+        self::COLUMN_EMAIL,
+        self::COLUMN_PASSWORD,
+        self::COLUMN_IMAGE,
     ];
 
     /**
@@ -29,8 +39,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        self::COLUMN_PASSWORD,
     ];
 
     /**

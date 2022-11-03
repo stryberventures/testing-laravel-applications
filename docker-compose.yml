@@ -36,6 +36,8 @@ services:
             - ${APP_BASE_DIR-.}/public:/app/public
         depends_on:
             - app
+        networks:
+            - stryber-testing
 
     pgsql:
         image: 'postgres:14'

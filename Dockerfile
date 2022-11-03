@@ -36,6 +36,7 @@ RUN RUNTIME_DEPS="tini fcgi"; \
 
 # ---------------------------------------- Install / Enable PHP Extensions ---------------------------------------------
 
+RUN apk add postgresql-dev && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
 
 RUN apk add --no-cache --virtual .build-deps \
       $PHPIZE_DEPS  \
@@ -46,6 +47,8 @@ RUN apk add --no-cache --virtual .build-deps \
       intl        \
       opcache     \
       pdo_mysql   \
+      pdo_pgsql   \
+      pgsql       \
       zip         \
  # Pecl Extensions -------------------------------- \
  && pecl install apcu && docker-php-ext-enable apcu \
