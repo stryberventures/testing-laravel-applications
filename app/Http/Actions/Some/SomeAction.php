@@ -9,8 +9,12 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class SomeAction extends Controller
 {
-    public function __invoke(): JsonResource
+    public function __invoke(?int $id): JsonResource
     {
-        return new JsonResource(['some data']);
+        if (!$id) {
+            $id = 1;
+        }
+
+        return new JsonResource([$id]);
     }
 }

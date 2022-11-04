@@ -17,4 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/some-endpoint', 'App\Http\Actions\Some\SomeAction')->name('some-endpoint');
+Route::get('/some-endpoint/{id}', 'App\Http\Actions\Some\SomeAction')
+    ->where('id', '[0-9]+')
+    ->name('some-endpoint')
+;

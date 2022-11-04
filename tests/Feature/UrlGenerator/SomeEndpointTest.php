@@ -12,18 +12,25 @@ final class SomeEndpointTest extends TestCase
 {
     public function testSomeEndpointSuccessResponse(): void
     {
-        $url = $this->urlGenerator->action(SomeAction::class);
-        $urlByName = $this->urlGenerator->route('some-endpoint');
+        $number = $this->faker->randomNumber(3);
 
-        $this->assertEquals($url, $urlByName);
-
-        $response = $this->getJson($url);
-
-        $response->assertOk();
-        $response->assertExactJson([
-            JsonResource::$wrap => [
-                'some data',
-            ],
+        $urlByAction = $this->urlGenerator->action(SomeAction::class, [
+            'id' => $number
         ]);
+
+        $urlByName = $this->urlGenerator->route('some-endpoint', [
+            'id' => $number
+        ]);
+
+        $this->assertEquals($urlByAction, $urlByName);
+
+        $this->getJson($urlByAction)
+            ->assertOk()
+            ->assertExactJson([
+                JsonResource::$wrap => [
+                    $number
+                ],
+            ])
+        ;
     }
 }
