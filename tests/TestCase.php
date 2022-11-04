@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use Illuminate\Auth\RequestGuard;
 use Illuminate\Contracts\Routing\UrlGenerator;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -22,5 +23,10 @@ abstract class TestCase extends BaseTestCase
         parent::setUp();
 
         $this->urlGenerator = $this->app->make(UrlGenerator::class);
+
+        // To be able to make user unauthorized
+        RequestGuard::macro('logout', function () {
+            $this->user = null;
+        });
     }
 }
