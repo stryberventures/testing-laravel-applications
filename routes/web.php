@@ -25,3 +25,7 @@ Route::get('/some-endpoint/{id}', 'App\Http\Actions\Some\SomeAction')
 Route::get('/create-event/', 'App\Http\Actions\ActionWithEvent\EventAction')
      ->name('create-event')
 ;
+
+Route::get('/exception/', 'App\Http\Actions\ActionWithException\ExceptionAction')
+     ->name('make-exception')
+;

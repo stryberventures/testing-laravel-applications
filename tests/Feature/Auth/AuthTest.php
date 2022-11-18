@@ -16,7 +16,7 @@ final class AuthTest extends TestCase
         $this->getJson($this->urlGenerator->route('user-info'))->assertOk();
     }
 
-    public function testSeeUserInfoUnUnauthorized(): void
+    public function testSeeUserInfoUnauthorized(): void
     {
         $this->authAsUser();
         $this->logout();
