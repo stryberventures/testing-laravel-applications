@@ -21,3 +21,7 @@ Route::get('/some-endpoint/{id}', 'App\Http\Actions\Some\SomeAction')
     ->where('id', '[0-9]+')
     ->name('some-endpoint')
 ;
+
+Route::get('/create-event/', 'App\Http\Actions\ActionWithEvent\EventAction')
+     ->name('create-event')
+;
