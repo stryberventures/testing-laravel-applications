@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\Feature\DataProviders;
+namespace Tests\Feature\DataProvider;
 
 use Closure;
 use DateTime;
 use Tests\TestCase;
 
-final class AddTest extends TestCase
+final class DataProvidersTest extends TestCase
 {
     /**
      * @dataProvider providerAddSuccess
@@ -70,7 +70,7 @@ final class AddTest extends TestCase
     {
         yield 'midnight' => [
             '2019-09-01 00:00:00',
-            function (AddTest $self, DateTime $date): void {
+            function (DataProvidersTest $self, DateTime $date): void {
                 // do something with current test instance
                 // $self->user->id
 

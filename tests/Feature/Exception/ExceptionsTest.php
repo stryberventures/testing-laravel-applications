@@ -18,7 +18,7 @@ final class ExceptionsTest extends TestCase
 
         $response = $this->getJson($url);
 
-        // Exceptions that don't inherit from App\Exceptions\ApiException\ApiException::class
+        // Exceptions that doesn't inherit from App\Exceptions\ApiException\ApiException::class
         // $this->assertStringContainsString(
         //     __('exceptions.group.message'),
         //     $response->json('message')

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Actions\Some;
+namespace App\Http\Actions\UrlParameters;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class SomeAction extends Controller
+class UrlParametersAction extends Controller
 {
     public function __invoke(?int $id): JsonResource
     {

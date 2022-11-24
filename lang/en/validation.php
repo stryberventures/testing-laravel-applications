@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Actions\ActionWithValidation\ValidationActionRequest;
+
 return [
 
     /*
@@ -155,6 +157,14 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'wrong_invoice_cutoff_days' => '"'
+            . ValidationActionRequest::KEY_INVOICE_CUTOFF_DAYS
+            . '" should be less or equal than :pay_day if '
+            . '"'
+            . ValidationActionRequest::KEY_PAY_DAY
+            . '"'
+            . ' equals :pay_day'
+        ,
     ],
 
     /*
@@ -168,6 +178,7 @@ return [
     |
     */
 
-    'attributes' => [],
-
+    'attributes' => [
+        'IBAN' => 'IBAN',
+    ],
 ];

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Feature\Events;
+namespace Tests\Feature\Event;
 
 use App\Events\ApiEndpointCalledEvent;
 use App\Listeners\ListenToApiEndpointCalled;

@@ -12,6 +12,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public const MIN_CUTOFF_DAYS = 0;
+    public const MAX_CUTOFF_DAYS = 28;
+
     public const COLUMN_FIRSTNAME = 'firstname';
     public const COLUMN_LASTNAME = 'lastname';
     public const COLUMN_USERNAME = 'username';

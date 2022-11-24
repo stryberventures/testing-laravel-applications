@@ -17,15 +17,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/some-endpoint/{id}', 'App\Http\Actions\Some\SomeAction')
+/** @uses App\Http\Actions\UrlParameters\UrlParametersAction */
+Route::get('/url-parameters/{id}', 'App\Http\Actions\UrlParameters\UrlParametersAction')
     ->where('id', '[0-9]+')
-    ->name('some-endpoint')
+    ->name('url-parameters')
 ;
 
+/** @uses App\Http\Actions\ActionWithEvent\EventAction */
 Route::get('/create-event/', 'App\Http\Actions\ActionWithEvent\EventAction')
      ->name('create-event')
 ;
 
+/** @uses App\Http\Actions\ActionWithException\ExceptionAction */
 Route::get('/exception/', 'App\Http\Actions\ActionWithException\ExceptionAction')
      ->name('make-exception')
+;
+
+/** @uses App\Http\Actions\ActionWithValidation\ValidationAction */
+Route::get('/validation/', 'App\Http\Actions\ActionWithValidation\ValidationAction')
+     ->name('make-validation-exception')
 ;
