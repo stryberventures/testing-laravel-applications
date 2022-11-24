@@ -1,5 +1,13 @@
 <?php
 
+if (!defined('QUEUE_NOTIFICATIONS')) {
+    define('QUEUE_NOTIFICATIONS', 'notifications');
+}
+
+if (!defined('QUEUE_LISTENERS')) {
+    define('QUEUE_LISTENERS', 'listeners');
+}
+
 return [
 
     /*

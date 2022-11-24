@@ -94,8 +94,11 @@ final class EventsTest extends TestCase
         // assertNotPushed if listener doesn't implement Illuminate\Contracts\Queue\ShouldQueue
         Queue::assertPushed(
             CallQueuedListener::class,
-            function ($listener) {
-                return $listener->class === ListenToApiEndpointCalled::class;
+            function ($job, $queue, $data) {
+                $this->assertEquals(ListenToApiEndpointCalled::class, $job->class);
+                $this->assertEquals(QUEUE_LISTENERS, $queue);
+
+                return true;
             }
         );
     }

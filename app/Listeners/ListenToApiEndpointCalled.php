@@ -4,11 +4,12 @@ namespace App\Listeners;
 
 use App\Events\ApiEndpointCalledEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Psr\Log\LoggerInterface;
 
 final class ListenToApiEndpointCalled implements ShouldQueue
 {
+    public $queue = QUEUE_LISTENERS;
+
     /**
      * Create the event listener.
      *

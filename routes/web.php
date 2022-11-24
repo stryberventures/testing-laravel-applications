@@ -37,3 +37,8 @@ Route::get('/exception/', 'App\Http\Actions\ActionWithException\ExceptionAction'
 Route::get('/validation/', 'App\Http\Actions\ActionWithValidation\ValidationAction')
      ->name('make-validation-exception')
 ;
+
+/** @uses App\Http\Actions\ActionWithNotification\NotificationAction */
+Route::get('/notification/', 'App\Http\Actions\ActionWithNotification\NotificationAction')
+     ->name('make-notification')
+;
