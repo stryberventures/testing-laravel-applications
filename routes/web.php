@@ -42,3 +42,13 @@ Route::get('/validation/', 'App\Http\Actions\ActionWithValidation\ValidationActi
 Route::get('/notification/', 'App\Http\Actions\ActionWithNotification\NotificationAction')
      ->name('make-notification')
 ;
+
+/** @uses \App\Http\Actions\ActionWithFile\UploadFile\UploadFileAction */
+Route::post('/upload-file/', 'App\Http\Actions\ActionWithFile\UploadFile\UploadFileAction')
+     ->name('upload-file')
+;
+
+/** @uses App\Http\Actions\ActionWithFile\DownloadFile\DownloadFileAction */
+Route::get('/download-file/', 'App\Http\Actions\ActionWithFile\DownloadFile\DownloadFileAction')
+     ->name('download-file')
+;

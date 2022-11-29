@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 trait WithAuthentication
 {
-    final protected function authAsUser(?User $user = null): User
+    private function authAsUser(?User $user = null): User
     {
         if (empty($user)) {
             $user = User::factory()->create();
@@ -20,7 +20,7 @@ trait WithAuthentication
         return $user;
     }
 
-    protected function logout(): void
+    private function logout(): void
     {
         /** @uses \Tests\TestCase::setUp() */
         Auth::guard('sanctum')->logout();

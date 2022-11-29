@@ -70,7 +70,7 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        public_path(\App\Infrastructure\Storage::KEY_STORAGE_NAME) => storage_path('app/' . \App\Infrastructure\Storage::KEY_STORAGE_PATH),
     ],
 
 ];

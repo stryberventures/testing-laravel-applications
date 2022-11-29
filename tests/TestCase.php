@@ -29,4 +29,14 @@ abstract class TestCase extends BaseTestCase
             $this->user = null;
         });
     }
+
+    final public function debug($data): void
+    {
+        fwrite(STDERR, var_export($data, true) . "\n");
+    }
+
+    final public function getJsonContentFromFile(string $path): array
+    {
+        return json_decode(file_get_contents(base_path() . '/' . $path), true);
+    }
 }

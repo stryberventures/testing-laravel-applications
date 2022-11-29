@@ -39,9 +39,13 @@ RUN RUNTIME_DEPS="tini fcgi"; \
 RUN apk add postgresql-dev && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
 
 RUN apk add --no-cache --virtual .build-deps \
-      $PHPIZE_DEPS  \
-      libzip-dev    \
-      icu-dev       \
+      $PHPIZE_DEPS      \
+      libzip-dev        \
+      icu-dev           \
+      libzip-dev        \
+      libpng-dev        \
+      jpeg-dev          \
+      libjpeg-turbo-dev \
  # PHP Extensions --------------------------------- \
  && docker-php-ext-install -j$(nproc) \
       intl        \
@@ -55,6 +59,10 @@ RUN apk add --no-cache --virtual .build-deps \
  # ---------------------------------------------------------------------
  # Install Xdebug at this step to make editing dev image cache-friendly, we delete xdebug from production image later
  && pecl install xdebug-${XDEBUG_VERSION} \
+ # Configure and install gd
+ && docker-php-ext-configure gd --enable-gd --with-jpeg \
+ && docker-php-ext-install -j$(nproc) gd \
+ && docker-php-ext-enable gd \
  # Cleanup ---------------------------------------- \
  && rm -r /tmp/pear; \
  # - Detect Runtime Dependencies of the installed extensions. \
