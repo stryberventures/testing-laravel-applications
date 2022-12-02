@@ -21,14 +21,17 @@ final class ValidationActionRequest extends ApiRequest
     public const KEY_IBAN = 'IBAN';
     public const KEY_SOME_FIELD = 'some_field';
 
+    public const MIN_PAY_DAY = 1;
+    public const MAX_PAY_DAY = 31;
+
     function rules(): array
     {
         return [
             self::KEY_PAY_DAY => [
                 'required',
                 'integer',
-                'min:1',
-                'max:31',
+                'min:' . self::MIN_PAY_DAY,
+                'max:' . self::MAX_PAY_DAY,
             ],
             self::KEY_INVOICE_CUTOFF_DAYS => [
                 'required',
