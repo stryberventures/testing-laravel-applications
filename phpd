@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export PHP_IDE_CONFIG="serverName=localhost"
+
+php \
+-d xdebug.start_with_request=1 \
+-d xdebug.client_host=host.docker.internal \
+-d xdebug.idekey=kubephp \
+-d xdebug.mode=debug \
+"$@"
+
+
