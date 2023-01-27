@@ -52,3 +52,8 @@ Route::post('/upload-file/', 'App\Http\Actions\ActionWithFile\UploadFile\UploadF
 Route::get('/download-file/', 'App\Http\Actions\ActionWithFile\DownloadFile\DownloadFileAction')
      ->name('download-file')
 ;
+
+/** @uses App\Http\Actions\ActionWithTime\TimeAction */
+Route::get('/time-machine/', 'App\Http\Actions\ActionWithTime\TimeAction')
+     ->name('time-machine')
+;
