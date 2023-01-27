@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/** @uses App\Http\Actions\UrlParameters\UrlParametersAction */
-Route::get('/url-parameters/{id}', 'App\Http\Actions\UrlParameters\UrlParametersAction')
+/** @uses App\Http\Actions\ActionWithUrlParameters\UrlParametersAction */
+Route::get('/url-parameters/{id}', 'App\Http\Actions\ActionWithUrlParameters\UrlParametersAction')
     ->where('id', '[0-9]+')
     ->name('url-parameters')
 ;

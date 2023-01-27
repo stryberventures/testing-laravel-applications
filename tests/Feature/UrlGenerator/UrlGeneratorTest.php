@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Feature\UrlGenerator;
 
-use App\Http\Actions\UrlParameters\UrlParametersAction;
+use App\Http\Actions\ActionWithUrlParameters\UrlParametersAction;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Tests\TestCase;
 
