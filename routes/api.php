@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-})->name('user-info');
+Route::middleware(['auth:sanctum'])->group(function () {
+    /** @uses App\Http\Actions\ActionWithResourceResponse\ResourceAction */
+    Route::get('/user/{with_group?}', 'App\Http\Actions\ActionWithResourceResponse\ResourceAction')
+        ->name('user-info')
+    ;
+});
+

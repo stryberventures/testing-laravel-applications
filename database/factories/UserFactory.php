@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Group;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -26,6 +27,7 @@ final class UserFactory extends Factory
             // You could also hard-code password values to avoid the hashing altogether.
             User::COLUMN_PASSWORD => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
             User::COLUMN_IMAGE => fake()->image,
+            User::COLUMN_GROUP_ID => Group::factory(),
         ];
     }
 }
