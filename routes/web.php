@@ -57,3 +57,8 @@ Route::get('/download-file/', 'App\Http\Actions\ActionWithFile\DownloadFile\Down
 Route::get('/time-machine/', 'App\Http\Actions\ActionWithTime\TimeAction')
      ->name('time-machine')
 ;
+
+/** @uses App\Http\Actions\ActionWithHttpRequest\HttpRequestAction */
+Route::get('/http/', 'App\Http\Actions\ActionWithHttpRequest\HttpRequestAction')
+     ->name('http')
+;
