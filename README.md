@@ -18,7 +18,7 @@
  - Memory issues with GitHub Actions
 
 ## Slides
-![Slides](./Testing Laravel Applications.pdf "Testing Laravel Applications.pdf")
+![Slides](./Testing Laravel Applications.pdf)
 
 ## License
 [MIT license](https://opensource.org/licenses/MIT).
