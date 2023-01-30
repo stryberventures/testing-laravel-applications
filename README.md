@@ -18,7 +18,11 @@
  - Memory issues with GitHub Actions
 
 ## Slides
-[Testing Laravel Applications.pdf](./Testing Laravel Applications.pdf)
+<object data="./Testing Laravel Applications.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="./Testing Laravel Applications.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
 
 ## License
 [MIT license](https://opensource.org/licenses/MIT).
