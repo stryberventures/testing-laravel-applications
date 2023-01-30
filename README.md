@@ -17,8 +17,7 @@
  - Mocking behavior
  - Memory issues with GitHub Actions
 
-## Slides
-![Slides](./TestingLaravelApplications.pdf)
+[Slides](./TestingLaravelApplications.pdf)
 
 ## License
 [MIT license](https://opensource.org/licenses/MIT).
