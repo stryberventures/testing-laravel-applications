@@ -18,7 +18,7 @@
  - Memory issues with GitHub Actions
 
 ## Slides
-<embed src="./Testing Laravel Applications.pdf" type="application/pdf">
+<object data="./Testing Laravel Applications.pdf" type="application/pdf" width="100%"></object>
 
 ## License
 [MIT license](https://opensource.org/licenses/MIT).
